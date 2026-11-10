@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#fff8f6">
+  <title>ESGOBuy spreadsheet | Guida italiana a taglie, foto QC e spedizione</title>
+  <meta name="description" content="Usa l’ESGOBuy spreadsheet per confrontare link prodotto, taglie in centimetri, foto QC e costi di spedizione. Esplora dieci categorie su CAFANS.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="ESGOBuy spreadsheet | Guida italiana a taglie, foto QC e spedizione">
+  <meta property="og:description" content="Una guida per leggere le schede prodotto, confrontare le misure e preparare un ordine con consegna in Italia.">
+  <meta property="og:image" content="https://nikeclprod.vtexassets.com/arquivos/ids/160793/CW2288_111_A_PREM.jpg?v=637654399803530000">
+  <meta property="og:image:alt" content="Nike Air Force 1 ’07 bianca vista di lato">
+  <link rel="preconnect" href="https://nikeclprod.vtexassets.com">
+  <!-- Ricerca editoriale. La prima pagina di Google non era verificabile. Dieci siti della ricerca web integrativa hanno orientato la scelta dei temi.
+       esgobuy.org: passaggio dal link all'ordine. esgo-buy.com: categorie e controlli.
+       esgobuysheets.com: misure e peso. esgobuyspreadsheet.net: catalogo per tipologia.
+       esgobuysheet.com: ricerca di link prodotto. mickeybuys.com: commissioni e magazzino.
+       spreadsheet.zone: confronto fra agenti. kakobuyspreadsheetfinds.com: distinzione fra varianti.
+       cafans.com: guida all'uso dei link. linktr.ee: scoperta di liste condivise. -->
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fff8f6;
+      --ink: #261824;
+      --muted: #655361;
+      --accent: #791941;
+      --panel: #f4e4ea;
+      --line: #ddc9d3;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.6; }
+    a { color: var(--accent); text-underline-offset: .22em; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+    h1, h2, h3, p, figure { margin: 0; }
+    h1, h2, h3 { line-height: 1.13; }
+    h1, h2 { font-family: Georgia, "Times New Roman", serif; }
+    h1 { font-size: clamp(2.65rem, 6vw, 5.7rem); letter-spacing: -.055em; }
+    h2 { font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: -.035em; }
+    h3 { font-size: 1.12rem; }
+    .wrap { width: min(71rem, calc(100% - 2rem)); margin-inline: auto; }
+    .mast { border-bottom: 1px solid var(--line); }
+    .mast .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .3rem 1rem; padding-block: .8rem; }
+    .brand { font-weight: 850; }
+    .eyebrow { color: var(--accent); font-weight: 750; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; }
+    .lead { display: grid; grid-template-columns: minmax(0, 1.17fr) minmax(0, 1fr); gap: clamp(1rem, 4vw, 3rem); align-items: center; padding-block: clamp(1.8rem, 5vw, 3.8rem) 1.5rem; }
+    .lead h1 { margin-block: .3rem .75rem; }
+    .intro { max-width: 54ch; }
+    .cta { display: inline-flex; align-items: center; min-height: 44px; margin-top: 1rem; padding: .5rem 1rem; border-radius: .25rem; background: var(--accent); color: #fff; font-weight: 700; }
+    .cta:focus-visible { outline-color: var(--accent); }
+    .photo img { display: block; width: 100%; object-fit: contain; background: #fff; }
+    .hero img { height: auto; aspect-ratio: 8 / 5; }
+    figcaption { padding: .45rem .65rem; background: var(--panel); color: var(--muted); font-size: .82rem; }
+    .catalogue { background: var(--panel); padding: clamp(.9rem, 3vw, 1.5rem); }
+    .catalogue h2 { margin-bottom: .65rem; font-size: 1.6rem; }
+    .categories { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .4rem; margin: 0; padding: 0; list-style: none; }
+    .categories a { display: flex; justify-content: space-between; align-items: center; gap: .35rem; height: 100%; min-height: 44px; padding: .4rem .65rem; border: 1px solid var(--line); background: var(--paper); font-weight: 650; }
+    .categories a:hover { background: #fff; }
+    .section { margin-block: clamp(2rem, 6vw, 4rem); }
+    .section > h2 { margin-block: .25rem .8rem; }
+    .stories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.5rem; margin-top: 1rem; }
+    .stories article { border-top: 2px solid var(--accent); padding-block: .85rem 1.15rem; }
+    .stories p, .example p { margin-top: .45rem; }
+    .example { border-left: .28rem solid var(--accent); background: var(--panel); padding: .9rem 1rem; }
+    .gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; margin-top: 1rem; }
+    .gallery figure { display: grid; grid-template-rows: auto 1fr; }
+    .gallery img { height: auto; aspect-ratio: 1; }
+    .faq { max-width: 52rem; }
+    details { border-top: 1px solid var(--line); padding-block: .75rem; }
+    details:last-child { border-bottom: 1px solid var(--line); }
+    summary { cursor: pointer; font-weight: 750; color: var(--accent); }
+    details p { padding-top: .45rem; }
+    footer { background: var(--ink); color: var(--paper); padding-block: 1.15rem; }
+    footer a { color: #ffd0e3; }
+    footer p { max-width: 72ch; margin-top: .35rem; }
+    @media (max-width: 56rem) {
+      .categories { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 40rem) {
+      .lead { grid-template-columns: minmax(0, 1fr); }
+      .categories, .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stories { grid-template-columns: minmax(0, 1fr); }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "it",
+    "name": "ESGOBuy spreadsheet | Guida italiana a taglie, foto QC e spedizione",
+    "description": "Usa l’ESGOBuy spreadsheet per confrontare link prodotto, taglie in centimetri, foto QC e costi di spedizione. Esplora dieci categorie su CAFANS.",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Che cos’è un ESGOBuy spreadsheet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "È un elenco di riferimenti a prodotti, spesso ordinati per categoria. Serve a creare una selezione da confrontare. La scheda di origine è il punto in cui ricontrollare variante, prezzo e disponibilità."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Come confronto le taglie per un acquisto dall’Italia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Confronta i centimetri della tabella del venditore con un capo che indossi già o, per le scarpe, con la lunghezza del piede se la tabella usa quella misura. Controlla come il venditore ha rilevato ogni misura."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Che cosa mostrano le foto QC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le foto QC possono mostrare il colore, l’etichetta, le cuciture e i difetti visibili dell’articolo fotografato. Da sole non attestano l’autenticità o la composizione del materiale."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Come stimo il costo totale della spedizione in Italia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Parti da un preventivo per la destinazione e controlla quali voci comprende. Considera il peso fatturabile, il cambio in euro, le commissioni ed eventuali imposte o oneri di importazione applicabili."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dove portano i link delle categorie?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I link aprono le rispettive categorie su CAFANS, dove puoi sfogliare le schede disponibili."
+        }
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/ezjwk/">
+</head>
+<body>
+  <header class="mast">
+    <div class="wrap">
+      <a class="brand" href="https://www.cafans.com">www.cafans.com</a>
+      <span class="eyebrow">Quaderno d’acquisto · Italia</span>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="lead" aria-labelledby="titolo">
+      <div>
+        <p class="eyebrow">Dalla ricerca alla scelta</p>
+        <h1 id="titolo">ESGOBuy spreadsheet</h1>
+        <p class="intro">Un ESGOBuy spreadsheet è un elenco di riferimenti a prodotti, spesso ordinati per categoria. Usalo per selezionare due o tre schede comparabili e ricontrollare misure, foto QC e spese prima di decidere. I reparti qui sotto aprono il catalogo CAFANS.</p>
+        <a class="cta" href="https://www.cafans.com">Esplora il catalogo CAFANS</a>
+      </div>
+      <figure class="photo hero">
+        <img src="https://nikeclprod.vtexassets.com/arquivos/ids/160793/CW2288_111_A_PREM.jpg?v=637654399803530000" width="800" height="500" alt="Nike Air Force 1 ’07 bianca vista di lato" fetchpriority="high" loading="eager">
+        <figcaption>Nike Air Force 1 ’07 · La vista laterale mostra il profilo della suola e della tomaia.</figcaption>
+      </figure>
+    </section>
+
+    <nav class="catalogue" aria-labelledby="reparti">
+      <h2 id="reparti">Sfoglia i reparti CAFANS</h2>
+      <ul class="categories">
+        <li><a href="https://cafans.com/category-911-Shoes.html">Scarpe <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://cafans.com/category-912-Hoodies%2FSweaters.html">Felpe e maglioni <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://cafans.com/category-913-T-Shirts.html">T-shirt <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://cafans.com/category-914-Jackets.html">Giacche <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://cafans.com/category-915-Pants%2FShorts.html">Pantaloni e shorts <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://cafans.com/category-916-Headwear.html">Copricapi <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://cafans.com/category-917-Sets.html">Completi <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://cafans.com/category-918-underwear%2Funderpants.html">Intimo <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://cafans.com/category-919-Jersey.html">Maglie sportive <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://cafans.com/category-920-Accessories.html">Accessori <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+
+    <section class="section" aria-labelledby="guida">
+      <p class="eyebrow">01 · Metodo di confronto</p>
+      <h2 id="guida">Guida all’acquisto con ESGOBuy</h2>
+      <div class="stories">
+        <article>
+          <h3>Link prodotto ESGOBuy e varianti</h3>
+          <p>Parti da una categoria e aggiungi un dettaglio utile, come il materiale o il tipo di chiusura. Apri la scheda di origine e annota codice modello, colore della variante, taglia selezionata e disponibilità effettiva. Per un link Weidian, Taobao o 1688 controlla che il riferimento e la quantità corrispondano alla riga salvata. Se trovi solo un album Yupoo, cerca anche la scheda del venditore.</p>
+        </article>
+        <article>
+          <h3>Taglie ESGOBuy e misure in centimetri</h3>
+          <p>Per confrontare la taglia EU di due sneaker, controlla se la tabella indica la lunghezza del piede o della soletta interna. Per una felpa misura larghezza del torace e lunghezza del capo disteso. Per pantaloni e shorts confronta il girovita o la larghezza della cintura, seguendo il metodo della tabella del venditore.</p>
+        </article>
+        <article>
+          <h3>Foto QC ESGOBuy e dettagli da chiedere</h3>
+          <p>Verifica che le foto di controllo qualità si riferiscano alla variante scelta. Per le scarpe cerca una vista di entrambe le suole e del tallone. Per una giacca controlla cuciture, etichetta della taglia e chiusura. Per un cappello chiedi la circonferenza interna e per un bracciale verifica il tipo di chiusura. Una foto con il metro aiuta a chiarire una misura incerta.</p>
+        </article>
+        <article>
+          <h3>Spedizione ESGOBuy in Italia e costo totale</h3>
+          <p>Per il preventivo di spedizione annota peso lordo e dimensioni del pacco. Chiedi come il corriere calcola il peso volumetrico e quale peso fatturabile applica. Confronta il costo totale in euro, incluse le commissioni e gli eventuali oneri applicabili. Prima di confermare, verifica le condizioni di reso e se il pacco consolidato cambia il preventivo.</p>
+        </article>
+      </div>
+      <aside class="example" aria-labelledby="esempio">
+        <h3 id="esempio">Esempio · Due felpe della stessa taglia</h3>
+        <p>Scrivi una riga per ciascuna felpa con link originale, colore, larghezza del torace a capo disteso e lunghezza dalla spalla all’orlo. Se una scheda riporta soltanto «M», chiedi le misure prima di inserirla nel confronto. Salva la data del controllo accanto alla disponibilità e al preventivo.</p>
+      </aside>
+    </section>
+
+    <section class="section" aria-labelledby="dettagli">
+      <p class="eyebrow">02 · Atlante dei dettagli</p>
+      <h2 id="dettagli">Che cosa cercare nelle foto</h2>
+      <p>Queste immagini illustrano quali dettagli osservare. Le schede del catalogo indicano gli articoli effettivamente disponibili.</p>
+      <div class="gallery">
+        <figure class="photo">
+          <img src="https://sg.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-3d-monogram-denim-jacket--FUJA44EK1004_PM2_Front%20view.jpg" width="480" height="480" loading="lazy" decoding="async" alt="Giacca in denim 3D Monogram Louis Vuitton vista di fronte">
+          <figcaption>Louis Vuitton · Osserva il taglio delle spalle e la posizione delle tasche.</figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="https://assets.christiandior.com/is/image/diorprod/243C904G4511C540_E03-1?%24default_GH%24=&amp;bfc=on&amp;crop=384%2C690%2C1089%2C747&amp;qlt=85" width="480" height="480" loading="lazy" decoding="async" alt="Cappellino Dior Couture blu scuro con visiera curva">
+          <figcaption>Dior · Controlla profilo della visiera e forma della calotta.</figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="https://global.trenbe.com/cdn/shop/files/YBC843972001.jpg?v=1768955757&amp;width=480" width="480" height="480" loading="lazy" decoding="async" alt="Anello Gucci Interlocking in argento con motivo a doppia G">
+          <figcaption>Gucci · Confronta la larghezza della fascia e chiedi il diametro interno.</figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="https://assets.hermes.com/is/image/hermesproduct/bracelet-chaine-d-ancre-moyen-modele--101994B%2000-worn-1-0-0-800-800_g.jpg" width="480" height="480" loading="lazy" decoding="async" alt="Bracciale Hermès Chaîne d’ancre a maglie in argento indossato al polso">
+          <figcaption>Hermès · Osserva la forma delle maglie e chiedi la lunghezza utile del bracciale.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section faq" aria-labelledby="domande">
+      <p class="eyebrow">03 · Risposte rapide</p>
+      <h2 id="domande">Domande frequenti sull’ESGOBuy spreadsheet</h2>
+      <details>
+        <summary>Che cos’è un ESGOBuy spreadsheet?</summary>
+        <p>È un elenco di riferimenti a prodotti, spesso ordinati per categoria. Serve a creare una selezione da confrontare. La scheda di origine è il punto in cui ricontrollare variante, prezzo e disponibilità.</p>
+      </details>
+      <details>
+        <summary>Come confronto le taglie per un acquisto dall’Italia?</summary>
+        <p>Confronta i centimetri della tabella del venditore con un capo che indossi già o, per le scarpe, con la lunghezza del piede se la tabella usa quella misura. Controlla come il venditore ha rilevato ogni misura.</p>
+      </details>
+      <details>
+        <summary>Che cosa mostrano le foto QC?</summary>
+        <p>Le foto QC possono mostrare il colore, l’etichetta, le cuciture e i difetti visibili dell’articolo fotografato. Da sole non attestano l’autenticità o la composizione del materiale.</p>
+      </details>
+      <details>
+        <summary>Come stimo il costo totale della spedizione in Italia?</summary>
+        <p>Parti da un preventivo per la destinazione e controlla quali voci comprende. Considera il peso fatturabile, il cambio in euro, le commissioni ed eventuali imposte o oneri di importazione applicabili.</p>
+      </details>
+      <details>
+        <summary>Dove portano i link delle categorie?</summary>
+        <p>I link aprono le rispettive categorie su CAFANS, dove puoi sfogliare le schede disponibili.</p>
+      </details>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <a class="brand" href="https://www.cafans.com">www.cafans.com</a>
+      <p>Guida editoriale indipendente. Le immagini di marca sono riferimenti visivi e non indicano disponibilità o affiliazione.</p>
+    </div>
+  </footer>
+</body>
+</html>
